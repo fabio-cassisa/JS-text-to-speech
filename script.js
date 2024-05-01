@@ -5,6 +5,7 @@ const textInput = document.getElementById('text')
 const speedInput = document.getElementById('speed')
 let currentCharacter
 
+//all the event listeners for play, pause, stop & speed:
 playBtn.addEventListener('click', () => {
     playText(textInput.value)
 })
@@ -23,6 +24,8 @@ utterance.addEventListener('boundary', e => {
     currentCharacter = e.charIndex
 })
 
+
+//definition for all the three functions: playText(), pauseText(), stopText() here below:
 function playText(text) {
     if (speechSynthesis.paused && speechSynthesis.speaking) {
         return speechSynthesis.resume()
